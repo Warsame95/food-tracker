@@ -59,8 +59,8 @@
     <!-- Fixed Banner -->
     <div class="banner">
         <h1>FoodTracker</h1>
-        <button onclick="location.href='index.html'">Home</button>
-        <button onclick="location.href='add_food.html'">Add Food Item</button>
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+        <a href="{{ url_for('add') }}"> <button>Add Food Item</button></a>
     </div>
 
     <!-- Main Content -->
