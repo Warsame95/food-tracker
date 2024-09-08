@@ -25,7 +25,7 @@
         }
 
         /* Buttons */
-        .banner button {
+        .banner .base-buttons {
             margin: 10px;
             padding: 10px 20px;
             background-color: white;
@@ -37,7 +37,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .banner button:hover {
+        .banner .base-buttons:hover {
             background-color: #ff6f61;
             color: white;
         }
@@ -59,8 +59,8 @@
     <!-- Fixed Banner -->
     <div class="banner">
         <h1>FoodTracker</h1>
-        <a href="{{ url_for('index') }}"><button>Home</button></a>
-        <a href="{{ url_for('add') }}"> <button>Add Food Item</button></a>
+        <a href="{{ url_for('index') }}"><button class="base-buttons">Home</button></a>
+        <a href="{{ url_for('add') }}"> <button class ="base-buttons">Add Food Item</button></a>
     </div>
 
     <!-- Main Content -->
