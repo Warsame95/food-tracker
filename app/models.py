@@ -1,5 +1,11 @@
 from __init__ import db
 
+
+log_food = db.Table('log_food',
+                    db.Column('log_id', db.Integer, db.ForeignKey('log.id')),
+                    db.Column('food_id', db.Integer, db.ForeignKey('food.id'))
+                )
+
 class Food(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
@@ -13,4 +19,4 @@ class Food(db.Model):
 class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
-    foods = db.relationship('Food', secondary=log_food, lazy='dynamic')
+    foods = db.relationship('Food', secondary= log_food, lazy='dynamic')
