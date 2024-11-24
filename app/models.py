@@ -1,4 +1,4 @@
-from __init__ import db
+from .__init__ import db
 
 
 log_food = db.Table('log_food',
