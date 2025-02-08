@@ -47,7 +47,8 @@
 
     <div class="container">
         <h2>Add food</h2>
-        <form action="/" method="POST">
+        <form action="/add" method="POST">
+            {{ template_form.hidden_tag() }}
             <label for="food-name">{{ template_form.food_name.label }}</label>
             {{template_form.food_name()}}
 

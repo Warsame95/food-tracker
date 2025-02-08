@@ -1,5 +1,5 @@
-from flask import render_template
-from app import app
+from flask import render_template, request
+from app import app, Food, db
 from .forms import FoodTrackerForm
 
 app.config["SECRET_KEY"] = "mysecret"
@@ -22,6 +22,14 @@ def add():
         protein = foodtracker_form.protein.data
         fats = foodtracker_form.fats.data
         date = foodtracker_form.date.data
+        print("hello")
+    
+        #new_food = Food(food_name, quantity, calories, carbs, protein, fats)
+        #db.session.add(new_food)
+        #db.session.commit()
+        message = f"The data for sock {food_name} has been submitted."
+        return f'<h1>{food_name} - {quantity} - {calories} - {carbs} - {protein} - {fats} - {date}</h1>'
+        #print(message)
 
-
+    print("hello2")
     return render_template("add.html", template_form = foodtracker_form)
